@@ -9,7 +9,7 @@
     ...:         print('age=',self._age)
     ...:
 
-In [72]: class bees(flowers):
+class bees(flowers):
     ...:     def __init__(self,name,age,city,state):
     ...:         super().__init__(name,age)
     ...:         self.__city=city
@@ -19,7 +19,7 @@ In [72]: class bees(flowers):
     ...:         print('state=',self._state)
     ...:
 
-In [73]: class honey(bees):
+ class honey(bees):
     ...:     def __init__(self,name,age,city,state,nationality):
     ...:         super().__init__(name,age,city,state)
     ...:         self.nationality=nationality
@@ -27,32 +27,32 @@ In [73]: class honey(bees):
     ...:         print('nationality=',self.nationality)
     ...:
 
-In [74]: a=flowers('bee',5)
+ a=flowers('bee',5)
 
-In [75]: a.displaybeesdetails()
+a.displaybeesdetails()
 name= bee
 age= 5
 
-In [76]: b=bees('bee',5,'trichy','tn')
+ b=bees('bee',5,'trichy','tn')
 
-In [77]: b.displaybeesdetails()
+ b.displaybeesdetails()
 city= trichy
 state= tn
 
-In [78]: c=honey('bee',5,'trichy','tn','indian')
+ c=honey('bee',5,'trichy','tn','indian')
 
-In [79]: c.displaybeesdetails()
+c.displaybeesdetails()
 city= trichy
 state= tn
 
-In [80]: c.displayhoneydetails()
+ c.displayhoneydetails()
 nationality= indian
 
-In [81]: c.nationality
-Out[81]: 'indian'
+ c.nationality
+ 'indian'
 
 
-: class employee():
+ class employee():
      ...:     def __init__(self,name,degree,salary):
      ...:         self.name=name
      ...:         self.degree=degree
@@ -65,7 +65,7 @@ Out[81]: 'indian'
      ...:         print('net salary=',self._salary+self.__bonus)
      ...:
 
-In [146]: class company(employee):
+ class company(employee):
      ...:     def __init__(self,name,degree,salary,age,state):
      ...:         super().__init__(name,degree,salary)
      ...:         self.__age=age
@@ -76,7 +76,7 @@ In [146]: class company(employee):
      ...:         print('net salary=',self._salary+self.__bonus)
      ...:
 
-In [147]: class branch(company):
+ class branch(company):
      ...:     def __init__(self,name,degree,salary,age,state,city,nationality):
      ...:         super().__init__(name,degree,salary,age,state)
      ...:         self.city=city
@@ -87,25 +87,23 @@ In [147]: class branch(company):
      ...:         print('age=',self.__age)
      ...:
 
-In [148]: #e=employee c=company b=brancj
+ e1=employee('bee','UG',50000)
 
-In [149]: e1=employee('bee','UG',50000)
+ e1.degree
+ 'UG'
 
-In [150]: e1.degree
-Out[150]: 'UG'
-
-In [151]: e1.displayemployee()
+e1.displayemployee()
 name= bee
 degree= UG
 salary= 50000
 net salary= 55000.0
 
-In [152]: c1=company('bee','UG',50000,25,'tn')
+c1=company('bee','UG',50000,25,'tn')
 
-In [153]: c1.state
-Out[153]: 'tn'
+ c1.state
+ 'tn'
 
-In [154]: c1.displaycompany()
+{ c1.displaycompany()
 age= 25
 state= tn
 ---------------------------------------------------------------------------
@@ -118,22 +116,20 @@ Cell In[146], line 9, in company.displaycompany(self)
       8 print('state=',self.state)
 ----> 9 print('net salary=',self._salary+self.__bonus)
 
-AttributeError: 'company' object has no attribute '_company__bonus'
+AttributeError: 'company' object has no attribute '_company__bonus'}
 
-In [155]: c1.displayemployee()
+c1.displayemployee()
 name= bee
 degree= UG
 salary= 50000
 net salary= 55000.0
 
-In [156]:
+ b1=branch('bee','UG',50000,25,'tn','trichy','indian')
 
-In [156]: b1=branch('bee','UG',50000,25,'tn','trichy','indian')
+ b1.state
+ 'tn'
 
-In [157]: b1.state
-Out[157]: 'tn'
-
-In [158]: b1.displaybranch()
+{In [158]: b1.displaybranch()
 city= trichy
 nationality= indian
 ---------------------------------------------------------------------------
@@ -146,19 +142,19 @@ Cell In[147], line 9, in branch.displaybranch(self)
       8 print('nationality=',self.nationality)
 ----> 9 print('age=',self.__age)
 
-AttributeError: 'branch' object has no attribute '_branch__age'
+AttributeError: 'branch' object has no attribute '_branch__age'}
 
-In [159]: b1.displayemployee()
+ b1.displayemployee()
 name= bee
 degree= UG
 salary= 50000
 net salary= 55000.0
 
-In [160]: b1.displaycompany()
+ b1.displaycompany()
 age= 25
 state= tn
 ---------------------------------------------------------------------------
-AttributeError                            Traceback (most recent call last)
+{AttributeError                            Traceback (most recent call last)
 Cell In[160], line 1
 ----> 1 b1.displaycompany()
 
@@ -167,8 +163,8 @@ Cell In[146], line 9, in company.displaycompany(self)
       8 print('state=',self.state)
 ----> 9 print('net salary=',self._salary+self.__bonus)
 
-AttributeError: 'branch' object has no attribute '_company__bonus'
+AttributeError: 'branch' object has no attribute '_company__bonus'}
 
-In [161]:
+
 
 
